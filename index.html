@@ -1,58 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Pinote</title>
+
   <meta
     name="description"
     content="Pinote — something new is taking shape."
   />
 
-  <!-- Sofia web font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--
+    Sofia is used ONLY for the Pinote wordmark.
+    No font file is stored in the GitHub repository.
+  -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Sofia&display=swap"
     rel="stylesheet"
   />
 
   <style>
+
+    /* =========================================================
+       PINOTE WEBSITE
+       ========================================================= */
+
     :root {
+
       --paper: #f7f3eb;
-      --paper-soft: #fbf8f2;
 
       --ink: #302923;
-      --text: #625a54;
+
+      --text: #625b55;
+
       --muted: #958c84;
 
-      --dot: rgba(166, 144, 117, 0.28);
+      --dot:
+        rgba(
+          166,
+          144,
+          117,
+          0.27
+        );
 
       --lavender: #bda2dc;
+
       --lavender-dark: #a789d0;
-      --lavender-deep: #9572c1;
+
+      --lavender-deep: #9270bd;
+
       --lavender-soft: #eee5f7;
 
       --latte: #b6946c;
+
       --latte-dark: #7c5d3e;
 
-      --white: rgba(255,255,255,0.92);
+      --white:
+        rgba(
+          255,
+          255,
+          255,
+          0.92
+        );
 
       --shadow:
-        0 28px 70px rgba(82, 62, 45, 0.16);
+        0 28px 70px
+        rgba(
+          82,
+          62,
+          45,
+          0.16
+        );
     }
+
 
     * {
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
+
       margin: 0;
+
       min-height: 100vh;
 
       font-family:
@@ -60,251 +113,422 @@
         BlinkMacSystemFont,
         "Segoe UI",
         Arial,
+        Helvetica,
         sans-serif;
 
-      color: var(--ink);
+      color:
+        var(--ink);
 
-      background-color: var(--paper);
+      background-color:
+        var(--paper);
 
       background-image:
+
         radial-gradient(
           circle,
-          var(--dot) 1.7px,
-          transparent 1.8px
+          var(--dot)
+          1.7px,
+          transparent
+          1.8px
         );
 
-      background-size: 34px 34px;
+      background-size:
+        34px 34px;
     }
 
+
     a {
+
       color: inherit;
+
       text-decoration: none;
     }
 
+
     button {
+
       font: inherit;
+
+      color: inherit;
     }
 
-    /* Sofia is ONLY used for Pinote brand titles */
+
+    /* =========================================================
+       SOFIA — ONLY PINOTE WORDMARK
+       ========================================================= */
+
     .pinote-wordmark {
-      font-family: "Sofia", cursive;
+
+      font-family:
+        "Sofia",
+        cursive;
+
       font-weight: 400;
     }
 
+
+    /* =========================================================
+       GLOBAL
+       ========================================================= */
+
     .site-shell {
+
       position: relative;
+
       min-height: 100vh;
+
       overflow: hidden;
     }
 
+
     .glow {
+
       position: fixed;
-      width: 430px;
-      height: 430px;
+
+      width: 440px;
+
+      height: 440px;
+
       border-radius: 50%;
-      background: rgba(189,162,220,0.11);
-      filter: blur(55px);
+
+      background:
+        rgba(
+          189,
+          162,
+          220,
+          0.11
+        );
+
+      filter:
+        blur(55px);
+
       pointer-events: none;
+
       z-index: 0;
     }
 
+
     .glow.one {
-      top: -160px;
-      right: -130px;
+
+      top: -170px;
+
+      right: -140px;
     }
+
 
     .glow.two {
-      bottom: -180px;
-      left: -170px;
+
+      bottom: -190px;
+
+      left: -180px;
     }
 
-    /* ---------------- HEADER ---------------- */
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
 
     header {
+
       position: relative;
+
       z-index: 20;
 
       display: flex;
-      align-items: center;
-      justify-content: space-between;
 
-      padding: 27px 6vw;
+      justify-content:
+        space-between;
+
+      align-items: center;
+
+      padding:
+        28px
+        6vw;
     }
 
+
     .site-logo {
+
       font-size: 39px;
+
       line-height: 1;
+
       cursor: pointer;
     }
 
+
     .nav {
+
       display: flex;
+
       align-items: center;
+
       gap: 28px;
 
       font-size: 14px;
+
       color: #716861;
     }
 
-    .nav a,
-    .nav button {
+
+    .nav button,
+    .nav a {
+
       appearance: none;
+
       border: 0;
-      padding: 0;
+
       background: none;
-      color: inherit;
+
+      padding: 0;
+
       cursor: pointer;
 
       transition:
-        opacity .2s ease,
-        transform .2s ease;
+        opacity 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .nav a:hover,
-    .nav button:hover {
-      opacity: .55;
-      transform: translateY(-1px);
+
+    .nav button:hover,
+    .nav a:hover {
+
+      opacity: 0.55;
+
+      transform:
+        translateY(-1px);
     }
 
-    /* ---------------- VIEWS ---------------- */
+
+    /* =========================================================
+       PAGE VIEWS
+       ========================================================= */
 
     .page-view {
+
       display: none;
     }
 
+
     .page-view.active {
+
       display: block;
     }
 
-    /* ---------------- HERO ---------------- */
+
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .hero {
+
       position: relative;
+
       z-index: 2;
 
-      min-height: calc(100vh - 95px);
+      min-height:
+        calc(
+          100vh - 96px
+        );
 
       display: grid;
+
       grid-template-columns:
         minmax(0, 1.05fr)
-        minmax(390px, .95fr);
+        minmax(390px, 0.95fr);
 
       align-items: center;
+
       gap: 70px;
 
-      padding: 35px 7vw 90px;
+      padding:
+        35px
+        7vw
+        90px;
     }
 
+
     .hero-copy {
+
       max-width: 650px;
     }
 
+
     .eyebrow {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 9px;
 
-      padding: 10px 15px;
+      padding:
+        10px
+        15px;
 
       border-radius: 999px;
 
-      background: rgba(255,255,255,.64);
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.64
+        );
 
       border:
         1px solid
-        rgba(123,90,57,.12);
+        rgba(
+          123,
+          90,
+          57,
+          0.12
+        );
 
-      backdrop-filter: blur(10px);
+      backdrop-filter:
+        blur(10px);
 
       font-size: 12px;
-      letter-spacing: .12em;
+
+      letter-spacing: 0.12em;
+
       text-transform: uppercase;
 
-      color: var(--latte-dark);
+      color:
+        var(--latte-dark);
     }
 
+
     .eyebrow-dot {
+
       width: 8px;
+
       height: 8px;
 
       border-radius: 50%;
-      background: var(--lavender);
+
+      background:
+        var(--lavender);
 
       box-shadow:
         0 0 0 4px
-        rgba(189,162,220,.15);
+        rgba(
+          189,
+          162,
+          220,
+          0.15
+        );
     }
 
+
     .hero-title {
-      margin: 26px 0 18px;
+
+      margin:
+        24px
+        0
+        18px;
 
       font-size:
-        clamp(74px, 8vw, 126px);
+        clamp(
+          78px,
+          8vw,
+          126px
+        );
 
-      line-height: .9;
+      line-height: 0.92;
+
       letter-spacing: -2px;
     }
 
+
     .hero-copy > p {
+
       max-width: 570px;
+
       margin: 0;
 
+      color:
+        var(--text);
+
       font-size:
-        clamp(18px, 1.7vw, 23px);
+        clamp(
+          18px,
+          1.7vw,
+          23px
+        );
 
       line-height: 1.55;
-
-      color: var(--text);
     }
 
-    .mystery {
-      margin-top: 25px !important;
 
-      font-size: 14px !important;
+    .mystery {
+
+      margin-top:
+        25px !important;
+
+      font-size:
+        14px !important;
 
       color:
         var(--muted) !important;
     }
 
+
     .hero-actions {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 12px;
 
       margin-top: 32px;
     }
 
+
     .button {
+
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       min-height: 52px;
 
-      padding: 0 24px;
+      padding:
+        0
+        24px;
 
       border-radius: 999px;
 
-      font-size: 14px;
-      font-weight: 650;
+      border: 0;
 
       cursor: pointer;
 
-      border: 0;
+      font-size: 14px;
+
+      font-weight: 650;
 
       transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
+
 
     .button:hover {
-      transform: translateY(-2px);
+
+      transform:
+        translateY(-2px);
     }
 
+
     .button.primary {
+
       color: white;
 
       background:
+
         linear-gradient(
           135deg,
           var(--lavender),
@@ -312,39 +536,68 @@
         );
 
       box-shadow:
+
         0 14px 28px
-        rgba(168,137,208,.25);
+        rgba(
+          168,
+          137,
+          208,
+          0.25
+        );
     }
 
+
     .button.secondary {
-      color: var(--lavender-dark);
+
+      color:
+        var(--lavender-dark);
 
       background:
-        rgba(255,255,255,.65);
+        rgba(
+          255,
+          255,
+          255,
+          0.65
+        );
 
       border:
         1px solid
-        rgba(167,137,208,.45);
+        rgba(
+          167,
+          137,
+          208,
+          0.45
+        );
 
-      backdrop-filter: blur(8px);
+      backdrop-filter:
+        blur(8px);
     }
 
-    /* ---------------- PHONE ---------------- */
+
+    /* =========================================================
+       PHONE
+       ========================================================= */
 
     .phone-stage {
+
       min-height: 760px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
     }
 
+
     .phone-shadow {
+
       position: absolute;
 
       width: 290px;
+
       height: 85px;
 
       bottom: 60px;
@@ -352,17 +605,32 @@
       border-radius: 50%;
 
       background:
-        rgba(72,52,36,.16);
+        rgba(
+          72,
+          52,
+          36,
+          0.16
+        );
 
-      filter: blur(25px);
+      filter:
+        blur(25px);
 
       animation:
-        shadowPulse 5.6s
-        ease-in-out infinite;
+        shadowPulse
+        5.6s
+        ease-in-out
+        infinite;
     }
 
+
     .phone {
+
+      position: relative;
+
+      z-index: 3;
+
       width: 350px;
+
       height: 725px;
 
       padding: 9px;
@@ -371,354 +639,411 @@
 
       background: #1f1f1f;
 
-      box-shadow: var(--shadow);
+      box-shadow:
+        var(--shadow);
 
-      position: relative;
-      z-index: 3;
-
-      transform: rotate(4deg);
+      transform:
+        rotate(4deg);
 
       animation:
-        phoneFloat 5.6s
-        ease-in-out infinite;
+        phoneFloat
+        5.6s
+        ease-in-out
+        infinite;
     }
 
+
     .phone::before {
+
       content: "";
 
       position: absolute;
 
+      z-index: 20;
+
       top: 16px;
+
       left: 50%;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
       width: 100px;
+
       height: 28px;
 
       border-radius: 18px;
 
       background: #1f1f1f;
-
-      z-index: 20;
     }
 
+
     .screen {
+
       position: relative;
 
       width: 100%;
+
       height: 100%;
 
       overflow: hidden;
 
       border-radius: 44px;
 
-      background-color: #f7f3eb;
+      background-color:
+        #f7f3eb;
 
       background-image:
+
         radial-gradient(
           circle,
-          rgba(167,145,117,.2)
+          rgba(
+            167,
+            145,
+            117,
+            0.20
+          )
           1.4px,
-          transparent 1.5px
+          transparent
+          1.5px
         );
 
-      background-size: 25px 25px;
+      background-size:
+        25px 25px;
     }
 
+
     .screen-content {
+
       position: absolute;
+
       inset: 0;
 
       display: flex;
+
       flex-direction: column;
 
-      padding: 61px 20px 20px;
+      padding:
+        61px
+        20px
+        20px;
 
       pointer-events: none;
     }
 
+
     .mini-logo {
+
       text-align: center;
 
       font-size: 37px;
 
       line-height: 1;
 
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
-    /* ---------------- GLITTER FOLDER ---------------- */
+
+    /* =========================================================
+       REAL PINOTE GLITTER FOLDER
+       =========================================================
+
+       This uses the actual glitter-purple texture currently
+       used in the Pinote Base44 app.
+
+       Glitter itself comes from the PNG, NOT CSS dots.
+       ========================================================= */
 
     .signup-folder-zone {
+
       position: relative;
 
       height: 111px;
 
-      margin: 0 8px 2px;
+      margin:
+        0
+        8px
+        2px;
 
       overflow: hidden;
     }
 
+
     .glitter-folder {
+
       position: absolute;
 
       width: 68px;
+
       height: 45px;
 
       left: 8px;
+
       top: 8px;
 
       border-radius:
-        7px 10px 10px 10px;
-
-      overflow: visible;
+        7px
+        10px
+        10px
+        10px;
 
       background:
-        radial-gradient(
-          circle at 10% 15%,
-          rgba(255,255,255,.98)
-          0 1px,
-          transparent 1.5px
-        ),
 
-        radial-gradient(
-          circle at 65% 20%,
-          rgba(255,255,255,.8)
-          0 1.2px,
-          transparent 1.7px
-        ),
+        url(
+          "https://media.base44.com/images/public/69b3fa90f586ce5150620167/e6eba321b_generated_image.png"
+        )
+        center
+        /
+        cover
+        no-repeat;
 
-        radial-gradient(
-          circle at 35% 65%,
-          rgba(255,255,255,.95)
-          0 .9px,
-          transparent 1.5px
-        ),
-
-        radial-gradient(
-          circle at 87% 72%,
-          rgba(255,255,255,.72)
-          0 1px,
-          transparent 1.5px
-        ),
-
-        radial-gradient(
-          circle at 51% 47%,
-          rgba(103,63,142,.58)
-          0 .8px,
-          transparent 1.4px
-        ),
-
-        radial-gradient(
-          circle at 23% 85%,
-          rgba(117,76,154,.46)
-          0 1px,
-          transparent 1.5px
-        ),
-
-        linear-gradient(
-          145deg,
-          #d7c0eb,
-          #b38ad7
-        );
-
-      background-size:
-        7px 7px,
-        9px 9px,
-        6px 6px,
-        8px 8px,
-        7px 7px,
-        10px 10px,
-        100% 100%;
+      border:
+        1.5px solid
+        #DDD0F0;
 
       box-shadow:
+
         0 9px 19px
-        rgba(108,77,138,.22),
-        inset 0 0 14px
-        rgba(255,255,255,.38);
+        rgba(
+          108,
+          77,
+          138,
+          0.18
+        );
 
       animation:
-        dvdX 4.9s
-        linear infinite alternate,
-        dvdY 3.5s
-        linear infinite alternate;
+
+        dvdX
+        4.9s
+        linear
+        infinite
+        alternate,
+
+        dvdY
+        3.5s
+        linear
+        infinite
+        alternate;
     }
 
+
+    /* Folder tab */
+
     .glitter-folder::before {
+
       content: "";
 
       position: absolute;
 
       top: -8px;
-      left: 4px;
 
-      width: 30px;
+      left: 0;
+
+      width: 34px;
+
       height: 11px;
 
       border-radius:
-        6px 6px 0 0;
+        6px
+        8px
+        0
+        0;
 
       background:
-        radial-gradient(
-          circle,
-          rgba(255,255,255,.92)
-          0 1px,
-          transparent 1.5px
-        ),
-        linear-gradient(
-          145deg,
-          #d4bce9,
-          #ba98dc
-        );
-
-      background-size:
-        7px 7px,
-        100% 100%;
+        #DDD0F0;
     }
+
+
+    /*
+      IMPORTANT:
+      no fake CSS star / white blob.
+      Glitter comes from the actual PNG.
+    */
 
     .glitter-folder::after {
-      content: "✦";
 
-      position: absolute;
-
-      right: 7px;
-      bottom: 5px;
-
-      color:
-        rgba(255,255,255,.98);
-
-      font-size: 14px;
-
-      filter:
-        drop-shadow(
-          0 0 4px
-          rgba(255,255,255,.9)
-        );
-
-      animation:
-        sparkle 1.5s
-        ease-in-out infinite;
+      content: none;
     }
 
+
     .folder-land-title {
+
       text-align: center;
 
-      margin: 2px 0 13px;
+      margin:
+        2px
+        0
+        13px;
+
+      color:
+        var(--lavender-dark);
 
       font-size: 19px;
 
       font-weight: 700;
-
-      color:
-        var(--lavender-dark);
     }
 
-    /* ---------------- SIGNUP CARD ---------------- */
+
+    /* =========================================================
+       SIGNUP SCREEN
+       ========================================================= */
 
     .signup-card {
-      background:
-        rgba(255,255,255,.94);
-
-      border-radius: 27px;
-
-      padding: 19px 18px;
-
-      box-shadow:
-        0 8px 25px
-        rgba(85,69,55,.09);
 
       display: grid;
 
       gap: 12px;
+
+      padding:
+        19px
+        18px;
+
+      border-radius: 27px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.94
+        );
+
+      box-shadow:
+
+        0 8px 25px
+        rgba(
+          85,
+          69,
+          55,
+          0.09
+        );
     }
 
+
     .field-group {
+
       display: grid;
+
       gap: 6px;
     }
 
+
     .field-label {
+
+      color: #656f81;
+
       font-size: 11px;
 
       font-weight: 700;
-
-      color: #656f81;
     }
 
+
     .fake-input {
+
       height: 39px;
-
-      border-radius: 15px;
-
-      border:
-        1.5px solid
-        #dacbea;
-
-      background:
-        rgba(250,248,252,.96);
 
       display: flex;
 
       align-items: center;
 
-      padding: 0 13px;
+      padding:
+        0
+        13px;
+
+      border:
+        1.5px solid
+        #dacbea;
+
+      border-radius: 15px;
+
+      background:
+        rgba(
+          250,
+          248,
+          252,
+          0.96
+        );
 
       color: #c6cbd4;
 
       font-size: 11px;
     }
 
+
     .password-field {
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
     }
 
+
     .eye-icon {
-      opacity: .55;
+
+      opacity: 0.55;
+
       font-size: 11px;
     }
 
+
     .field-hint {
-      font-size: 9px;
 
       color: #c3c8d1;
+
+      font-size: 9px;
     }
 
+
     .terms-row {
+
       display: flex;
 
       align-items: flex-start;
 
       gap: 9px;
 
+      color: #707887;
+
       font-size: 9px;
 
       line-height: 1.45;
-
-      color: #707887;
     }
+
 
     .terms-row strong {
-      color: var(--lavender-dark);
+
+      color:
+        var(--lavender-dark);
     }
 
+
     .fake-checkbox {
+
+      flex:
+        0 0 13px;
+
       width: 13px;
+
       height: 13px;
 
-      flex: 0 0 13px;
-
-      border-radius: 3px;
+      margin-top: 1px;
 
       border:
         1.3px solid
         #7d7d7d;
 
-      margin-top: 1px;
+      border-radius: 3px;
     }
 
+
     .create-account-button {
+
       height: 42px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
 
       border-radius: 16px;
 
@@ -728,11 +1053,8 @@
 
       font-weight: 700;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       background:
+
         linear-gradient(
           135deg,
           #c3a7dc,
@@ -740,32 +1062,55 @@
         );
 
       box-shadow:
+
         0 8px 18px
-        rgba(167,137,208,.20);
+        rgba(
+          167,
+          137,
+          208,
+          0.20
+        );
     }
 
+
     .or-divider {
+
       display: grid;
 
       grid-template-columns:
-        1fr auto 1fr;
-
-      gap: 10px;
+        1fr
+        auto
+        1fr;
 
       align-items: center;
+
+      gap: 10px;
 
       color: #c7ccd3;
 
       font-size: 10px;
     }
 
+
     .or-divider span {
+
       height: 1px;
+
       background: #e6dcef;
     }
 
+
     .google-button {
+
       min-height: 42px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 10px;
 
       border:
         1.5px solid
@@ -773,67 +1118,86 @@
 
       border-radius: 16px;
 
-      display: flex;
+      background: white;
 
-      align-items: center;
-      justify-content: center;
-
-      gap: 10px;
+      color: #4d5868;
 
       font-size: 11px;
 
       font-weight: 650;
-
-      color: #4d5868;
-
-      background: white;
     }
+
 
     .google-g {
-      font-size: 16px;
-      font-weight: 900;
 
       color: #4285f4;
+
+      font-size: 16px;
+
+      font-weight: 900;
     }
 
+
     .signin-text {
+
       margin-top: 12px;
 
       text-align: center;
 
-      font-size: 10px;
-
       color: #747d8d;
+
+      font-size: 10px;
     }
+
 
     .signin-text strong {
-      color: var(--lavender-dark);
+
+      color:
+        var(--lavender-dark);
     }
 
-    /* ---------------- SPARKLES ---------------- */
+
+    /* =========================================================
+       FLOATING SPARKLES AROUND PHONE
+       ========================================================= */
 
     .sparkle-outside {
+
       position: absolute;
 
       z-index: 1;
 
       color:
-        rgba(171,139,206,.58);
+        rgba(
+          171,
+          139,
+          206,
+          0.58
+        );
 
       animation:
-        floatSparkle 4s
-        ease-in-out infinite;
+
+        floatSparkle
+        4s
+        ease-in-out
+        infinite;
     }
 
+
     .sparkle-outside.one {
+
       top: 23%;
+
       left: 5%;
 
       font-size: 20px;
     }
 
+
     .sparkle-outside.two {
+
       top: 41%;
+
       right: 3%;
 
       font-size: 14px;
@@ -841,8 +1205,11 @@
       animation-delay: 1.2s;
     }
 
+
     .sparkle-outside.three {
+
       bottom: 20%;
+
       left: 12%;
 
       font-size: 15px;
@@ -850,16 +1217,25 @@
       animation-delay: 2s;
     }
 
-    /* ---------------- WHAT IS PINOTE ---------------- */
+
+    /* =========================================================
+       WHAT IS PINOTE?
+       ========================================================= */
 
     .teaser {
+
       position: relative;
+
       z-index: 2;
 
-      padding: 110px 7vw;
+      padding:
+        110px
+        7vw;
     }
 
+
     .teaser-card {
+
       max-width: 1080px;
 
       margin: 0 auto;
@@ -867,251 +1243,301 @@
       display: grid;
 
       grid-template-columns:
-        .85fr 1.15fr;
+        0.85fr
+        1.15fr;
 
       gap: 45px;
 
       align-items: center;
 
-      padding: 60px 7vw;
+      padding:
+        60px
+        7vw;
+
+      border:
+        1px solid
+        rgba(
+          167,
+          137,
+          208,
+          0.15
+        );
 
       border-radius: 38px;
 
       background:
-        rgba(255,255,255,.62);
+        rgba(
+          255,
+          255,
+          255,
+          0.62
+        );
 
-      border:
-        1px solid
-        rgba(167,137,208,.15);
-
-      backdrop-filter: blur(14px);
+      backdrop-filter:
+        blur(14px);
 
       box-shadow:
+
         0 22px 65px
-        rgba(91,72,55,.08);
+        rgba(
+          91,
+          72,
+          55,
+          0.08
+        );
     }
 
+
     .teaser-folder-area {
-      min-height: 230px;
 
       position: relative;
+
+      min-height: 230px;
 
       display: flex;
 
       align-items: center;
+
       justify-content: center;
     }
 
+
     .orbit {
+
       position: absolute;
 
       width: 250px;
+
       height: 70px;
 
       border:
         2px solid
-        rgba(167,137,208,.32);
+        rgba(
+          167,
+          137,
+          208,
+          0.30
+        );
 
       border-radius: 50%;
 
-      transform: rotate(-8deg);
+      transform:
+        rotate(-8deg);
     }
 
+
+    /* =========================================================
+       BIG REAL GLITTER FOLDER
+       ========================================================= */
+
     .big-folder {
-      width: 180px;
-      height: 118px;
 
       position: relative;
 
-      border-radius:
-        16px 22px 22px 22px;
+      width: 180px;
 
-      transform: rotate(6deg);
+      height: 118px;
+
+      border:
+        1.5px solid
+        #DDD0F0;
+
+      border-radius:
+        16px
+        22px
+        22px
+        22px;
 
       background:
-        radial-gradient(
-          circle at 15% 20%,
-          rgba(255,255,255,.95)
-          0 1.5px,
-          transparent 2px
-        ),
 
-        radial-gradient(
-          circle at 65% 25%,
-          rgba(255,255,255,.8)
-          0 1.4px,
-          transparent 2px
-        ),
-
-        radial-gradient(
-          circle at 30% 70%,
-          rgba(255,255,255,.88)
-          0 1.2px,
-          transparent 1.9px
-        ),
-
-        radial-gradient(
-          circle at 82% 68%,
-          rgba(110,70,150,.5)
-          0 1.3px,
-          transparent 2px
-        ),
-
-        linear-gradient(
-          145deg,
-          #d3bee8,
-          #ac89cf
-        );
-
-      background-size:
-        11px 11px,
-        13px 13px,
-        9px 9px,
-        12px 12px,
-        100% 100%;
+        url(
+          "https://media.base44.com/images/public/69b3fa90f586ce5150620167/e6eba321b_generated_image.png"
+        )
+        center
+        /
+        cover
+        no-repeat;
 
       box-shadow:
+
         0 20px 34px
-        rgba(112,83,141,.19),
-        inset 0 0 25px
-        rgba(255,255,255,.25);
+        rgba(
+          112,
+          83,
+          141,
+          0.18
+        );
+
+      transform:
+        rotate(6deg);
 
       animation:
-        bigFolderFloat 4s
-        ease-in-out infinite;
+
+        bigFolderFloat
+        4s
+        ease-in-out
+        infinite;
     }
 
+
     .big-folder::before {
+
       content: "";
 
       position: absolute;
 
       top: -20px;
-      left: 13px;
 
-      width: 72px;
+      left: 0;
+
+      width: 76px;
+
       height: 24px;
 
       border-radius:
-        12px 12px 0 0;
+        12px
+        14px
+        0
+        0;
 
       background:
-        radial-gradient(
-          circle,
-          rgba(255,255,255,.9)
-          0 1px,
-          transparent 1.6px
-        ),
-        #c2a5df;
-
-      background-size:
-        10px 10px;
+        #DDD0F0;
     }
+
 
     .big-folder::after {
-      content: "✦";
 
-      position: absolute;
-
-      right: 22px;
-      bottom: 17px;
-
-      font-size: 30px;
-
-      color:
-        rgba(255,255,255,.9);
-
-      filter:
-        drop-shadow(
-          0 0 6px white
-        );
+      content: none;
     }
+
 
     .teaser-copy h2 {
-      margin: 0 0 20px;
 
-      font-size:
-        clamp(38px, 4vw, 58px);
-
-      font-weight: 700;
+      margin:
+        0
+        0
+        20px;
 
       color:
-        var(--lavender-dark);
+        var(--ink);
+
+      font-size:
+        clamp(
+          38px,
+          4vw,
+          58px
+        );
+
+      font-weight: 700;
     }
 
+
     .teaser-copy p {
+
       max-width: 540px;
 
       margin: 0;
 
+      color:
+        var(--text);
+
       font-size: 17px;
 
       line-height: 1.7;
-
-      color: var(--text);
     }
 
+
     .teaser-copy p + p {
+
       margin-top: 16px;
     }
 
+
     .coming-line {
+
       color:
-        var(--lavender-dark) !important;
+        var(--lavender-dark)
+        !important;
 
       font-weight: 700;
     }
 
-    /* ---------------- FOOTER ---------------- */
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
 
     footer {
+
       position: relative;
+
       z-index: 2;
 
       display: flex;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
-      align-items: flex-end;
-
-      gap: 30px;
+      align-items:
+        flex-end;
 
       flex-wrap: wrap;
 
-      padding: 35px 7vw 45px;
+      gap: 30px;
+
+      padding:
+        35px
+        7vw
+        45px;
 
       color: #837a73;
 
       font-size: 13px;
     }
 
+
     .footer-brand {
+
       display: grid;
+
       gap: 8px;
     }
 
-    .footer-logo {
-      font-size: 30px;
 
-      color: var(--ink);
+    .footer-logo {
+
+      color:
+        var(--ink);
+
+      font-size: 30px;
     }
 
+
     .footer-links {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 25px;
     }
 
+
     .footer-links a:hover {
-      color: var(--lavender-dark);
+
+      color:
+        var(--lavender-dark);
     }
 
-    /* ==================================================
-       LEGAL / SUPPORT PAGES
-       ================================================== */
+
+    /* =========================================================
+       PRIVACY / TERMS / SUPPORT PAGES
+       ========================================================= */
 
     .info-page {
+
       position: relative;
+
       z-index: 4;
 
       max-width: 940px;
@@ -1119,10 +1545,14 @@
       margin: 0 auto;
 
       padding:
-        50px 24px 110px;
+        50px
+        24px
+        110px;
     }
 
+
     .back-link {
+
       display: inline-flex;
 
       align-items: center;
@@ -1135,51 +1565,86 @@
         var(--lavender-dark);
 
       font-weight: 650;
-
-      cursor: pointer;
     }
 
+
     .info-card {
+
       padding:
         46px
         48px;
 
+      border:
+        1px solid
+        rgba(
+          167,
+          137,
+          208,
+          0.14
+        );
+
       border-radius: 30px;
 
       background:
-        rgba(255,255,255,.9);
-
-      border:
-        1px solid
-        rgba(167,137,208,.14);
-
-      box-shadow:
-        0 20px 55px
-        rgba(82,62,45,.09);
+        rgba(
+          255,
+          255,
+          255,
+          0.90
+        );
 
       backdrop-filter:
         blur(12px);
+
+      box-shadow:
+
+        0 20px 55px
+        rgba(
+          82,
+          62,
+          45,
+          0.09
+        );
     }
+
 
     .info-card h1 {
-      margin: 0 0 8px;
+
+      margin:
+        0
+        0
+        8px;
 
       font-size:
-        clamp(36px, 5vw, 52px);
+        clamp(
+          36px,
+          5vw,
+          52px
+        );
     }
 
-    .updated {
-      margin: 0 0 30px;
 
-      color: var(--muted);
+    .updated {
+
+      margin:
+        0
+        0
+        30px;
+
+      color:
+        var(--muted);
 
       font-size: 13px;
     }
 
+
     .draft-notice {
+
       margin-bottom: 30px;
 
-      padding: 16px 18px;
+      padding:
+        16px
+        18px;
 
       border-radius: 15px;
 
@@ -1195,88 +1660,126 @@
       line-height: 1.5;
     }
 
+
     .info-card h2 {
+
       margin:
-        34px 0 10px;
+        34px
+        0
+        10px;
 
       font-size: 20px;
     }
 
+
     .info-card p,
     .info-card li {
-      color: var(--text);
+
+      color:
+        var(--text);
 
       font-size: 15px;
 
       line-height: 1.75;
     }
 
-    .info-card ul {
-      padding-left: 22px;
-    }
 
-    /* SUPPORT */
+    /* =========================================================
+       SUPPORT CARDS
+       ========================================================= */
 
     .support-intro {
-      max-width: 650px;
 
-      margin-bottom: 30px !important;
+      max-width: 680px;
     }
 
+
     .contact-grid {
+
       display: grid;
 
       grid-template-columns:
-        repeat(2, minmax(0,1fr));
+        repeat(
+          2,
+          minmax(0, 1fr)
+        );
 
       gap: 16px;
 
       margin-top: 28px;
     }
 
+
     .contact-card {
+
       padding: 22px;
+
+      border:
+        1px solid
+        rgba(
+          167,
+          137,
+          208,
+          0.18
+        );
 
       border-radius: 18px;
 
       background:
-        rgba(247,243,251,.9);
-
-      border:
-        1px solid
-        rgba(167,137,208,.18);
+        rgba(
+          247,
+          243,
+          251,
+          0.90
+        );
     }
 
+
     .contact-card h3 {
+
       margin:
-        0 0 7px;
+        0
+        0
+        8px;
 
       font-size: 16px;
     }
 
+
     .planned-email {
+
       color:
         var(--lavender-dark);
 
       font-weight: 700;
 
-      overflow-wrap: anywhere;
+      overflow-wrap:
+        anywhere;
     }
+
 
     .contact-status {
-      margin:
-        8px 0 0 !important;
 
-      font-size:
-        12px !important;
+      margin:
+        8px
+        0
+        0 !important;
 
       color:
-        var(--muted) !important;
+        var(--muted)
+        !important;
 
-      font-style: italic;
+      font-size:
+        12px
+        !important;
+
+      font-style:
+        italic;
     }
 
+
     .support-note {
+
       margin-top: 30px;
 
       padding: 17px;
@@ -1284,7 +1787,12 @@
       border-radius: 15px;
 
       background:
-        rgba(246,239,225,.8);
+        rgba(
+          246,
+          239,
+          225,
+          0.80
+        );
 
       color: #786b5f;
 
@@ -1293,121 +1801,145 @@
       line-height: 1.6;
     }
 
-    /* ---------------- ANIMATIONS ---------------- */
+
+    /* =========================================================
+       ANIMATIONS
+       ========================================================= */
 
     @keyframes phoneFloat {
+
       0%,
       100% {
+
         transform:
           translateY(0)
           rotate(4deg);
       }
 
       50% {
+
         transform:
           translateY(-18px)
           rotate(2deg);
       }
     }
 
+
     @keyframes shadowPulse {
+
       0%,
       100% {
-        transform: scaleX(1);
-        opacity: .18;
+
+        transform:
+          scaleX(1);
+
+        opacity: 0.18;
       }
 
       50% {
-        transform: scaleX(.84);
-        opacity: .10;
+
+        transform:
+          scaleX(0.84);
+
+        opacity: 0.10;
       }
     }
 
-    @keyframes sparkle {
-      0%,
-      100% {
-        opacity: .45;
-
-        transform:
-          scale(.78)
-          rotate(0deg);
-      }
-
-      50% {
-        opacity: 1;
-
-        transform:
-          scale(1.28)
-          rotate(25deg);
-      }
-    }
 
     @keyframes floatSparkle {
+
       0%,
       100% {
+
         transform:
           translateY(0)
           rotate(0deg);
 
-        opacity: .4;
+        opacity: 0.40;
       }
 
       50% {
+
         transform:
           translateY(-14px)
           rotate(18deg);
 
-        opacity: .85;
+        opacity: 0.85;
       }
     }
 
+
     @keyframes dvdX {
+
       from {
+
         left: 8px;
       }
 
       to {
+
         left:
-          calc(100% - 76px);
+          calc(
+            100% - 76px
+          );
       }
     }
 
+
     @keyframes dvdY {
+
       from {
+
         top: 8px;
       }
 
       to {
+
         top:
-          calc(100% - 54px);
+          calc(
+            100% - 54px
+          );
       }
     }
 
+
     @keyframes bigFolderFloat {
+
       0%,
       100% {
+
         transform:
           translateY(0)
           rotate(6deg);
       }
 
       50% {
+
         transform:
           translateY(-10px)
           rotate(3deg);
       }
     }
 
-    /* ---------------- MOBILE ---------------- */
 
-    @media (max-width: 950px) {
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (
+      max-width: 950px
+    ) {
 
       .nav {
+
         display: none;
       }
 
+
       .hero {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
 
         text-align: center;
 
@@ -1416,182 +1948,301 @@
         gap: 18px;
       }
 
+
       .hero-copy {
-        margin: 0 auto;
+
+        margin:
+          0
+          auto;
       }
+
 
       .hero-copy > p {
-        margin-left: auto;
-        margin-right: auto;
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
       }
+
 
       .hero-actions {
-        justify-content: center;
+
+        justify-content:
+          center;
       }
+
 
       .phone-stage {
-        min-height: 790px;
+
+        min-height:
+          790px;
       }
 
+
       .teaser-card {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
 
         text-align: center;
       }
 
+
       .teaser-copy p {
-        margin-left: auto;
-        margin-right: auto;
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
       }
 
+
       .contact-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
       }
     }
 
-    @media (max-width: 560px) {
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (
+      max-width: 560px
+    ) {
 
       header {
-        padding: 22px 20px;
+
+        padding:
+          22px
+          20px;
       }
 
+
       .site-logo {
+
         font-size: 34px;
       }
 
+
       .hero {
+
         padding:
-          45px 20px 75px;
+          45px
+          20px
+          75px;
       }
+
 
       .hero-title {
+
         font-size:
-          clamp(72px, 22vw, 100px);
+          clamp(
+            72px,
+            22vw,
+            100px
+          );
       }
+
 
       .phone-stage {
-        min-height: 700px;
+
+        min-height:
+          700px;
       }
 
+
       .phone {
+
         width: 315px;
+
         height: 655px;
       }
 
+
       .screen-content {
+
         padding:
-          56px 17px 17px;
+          56px
+          17px
+          17px;
       }
 
+
       .mini-logo {
+
         font-size: 33px;
       }
 
+
       .signup-folder-zone {
+
         height: 85px;
       }
 
+
       .folder-land-title {
+
         font-size: 16px;
+
         margin-bottom: 9px;
       }
 
+
       .signup-card {
+
         padding:
-          15px 14px;
+          15px
+          14px;
 
         gap: 9px;
       }
 
+
       .fake-input {
+
         height: 34px;
       }
 
+
       .create-account-button,
       .google-button {
-        min-height: 37px;
+
         height: 37px;
+
+        min-height: 37px;
       }
 
+
       .signin-text {
+
         margin-top: 7px;
       }
 
+
       .teaser {
+
         padding:
-          80px 20px;
+          80px
+          20px;
       }
 
+
       .teaser-card {
+
         padding:
-          42px 22px;
+          42px
+          22px;
 
         border-radius: 30px;
       }
 
+
       .big-folder {
+
         width: 150px;
+
         height: 100px;
       }
 
+
       .orbit {
+
         width: 215px;
       }
 
+
       footer {
+
         padding:
-          30px 20px 40px;
+          30px
+          20px
+          40px;
       }
+
 
       .info-page {
+
         padding:
-          35px 18px 80px;
+          35px
+          18px
+          80px;
       }
 
+
       .info-card {
+
         padding:
-          30px 22px;
+          30px
+          22px;
 
         border-radius: 24px;
       }
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
 <div class="site-shell">
 
+
   <div class="glow one"></div>
+
   <div class="glow two"></div>
 
-  <!-- HEADER -->
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
 
   <header>
 
     <a
-      href="#"
-      class="site-logo pinote-wordmark"
-      aria-label="Pinote home"
+      href="#home"
+      class="
+        site-logo
+        pinote-wordmark
+      "
     >
       Pinote
     </a>
+
 
     <nav class="nav">
 
       <button
         type="button"
-        onclick="goHomeAndScroll('what-is-pinote')"
+        onclick="
+          goHomeAndScroll(
+            'what-is-pinote'
+          )
+        "
       >
         What is Pinote?
       </button>
 
+
       <button
         type="button"
-        onclick="goHomeAndScroll('coming-soon')"
+        onclick="
+          goHomeAndScroll(
+            'coming-soon'
+          )
+        "
       >
         Coming Soon
       </button>
+
 
       <a href="#support">
         Support
@@ -1601,28 +2252,44 @@
 
   </header>
 
-  <!-- =================================================
-       HOME
-       ================================================= -->
+
+
+  <!-- =======================================================
+       HOME PAGE
+       ======================================================= -->
 
   <div
     id="home-view"
-    class="page-view active"
+    class="
+      page-view
+      active
+    "
   >
+
 
     <main>
 
+
+      <!-- HERO -->
+
       <section class="hero">
+
 
         <div class="hero-copy">
 
+
           <div class="eyebrow">
 
-            <span class="eyebrow-dot"></span>
+            <span
+              class="
+                eyebrow-dot
+              "
+            ></span>
 
             Something new is taking shape
 
           </div>
+
 
           <h1
             class="
@@ -1633,59 +2300,117 @@
             Pinote
           </h1>
 
+
           <p>
-            A new space for the things you want
-            to keep, return to, and make your own.
+
+            A new space for the things
+            you want to keep, return to,
+            and make your own.
+
           </p>
 
+
           <p class="mystery">
-            We’re not ready to tell you everything
-            just yet.
+
+            We’re not ready to tell you
+            everything just yet.
+
           </p>
+
 
           <div class="hero-actions">
 
+
             <button
-              class="button primary"
-              onclick="scrollHome('coming-soon')"
+              class="
+                button
+                primary
+              "
+              onclick="
+                goHomeAndScroll(
+                  'coming-soon'
+                )
+              "
             >
+
               Coming soon
+
             </button>
 
+
             <a
-              class="button secondary"
+              class="
+                button
+                secondary
+              "
               href="#support"
             >
+
               Stay curious
+
             </a>
 
+
           </div>
+
 
         </div>
 
-        <!-- PHONE -->
+
+
+        <!-- =================================================
+             FLOATING PHONE
+             ================================================= -->
 
         <div class="phone-stage">
 
-          <div class="phone-shadow"></div>
 
-          <div class="sparkle-outside one">
+          <div
+            class="
+              phone-shadow
+            "
+          ></div>
+
+
+          <div
+            class="
+              sparkle-outside
+              one
+            "
+          >
             ✦
           </div>
 
-          <div class="sparkle-outside two">
+
+          <div
+            class="
+              sparkle-outside
+              two
+            "
+          >
             ✧
           </div>
 
-          <div class="sparkle-outside three">
+
+          <div
+            class="
+              sparkle-outside
+              three
+            "
+          >
             ✦
           </div>
 
+
+
           <div class="phone">
+
 
             <div class="screen">
 
+
               <div class="screen-content">
+
 
                 <div
                   class="
@@ -1693,38 +2418,78 @@
                     pinote-wordmark
                   "
                 >
+
                   Pinote
-                </div>
-
-                <div class="signup-folder-zone">
-
-                  <div class="glitter-folder"></div>
 
                 </div>
 
-                <div class="folder-land-title">
+
+
+                <!-- REAL GLITTER FOLDER -->
+
+                <div
+                  class="
+                    signup-folder-zone
+                  "
+                >
+
+                  <div
+                    class="
+                      glitter-folder
+                    "
+                  ></div>
+
+                </div>
+
+
+
+                <div
+                  class="
+                    folder-land-title
+                  "
+                >
+
                   Welcome to Folder Land!
+
                 </div>
+
+
+
+                <!-- SIGNUP CARD -->
 
                 <div class="signup-card">
 
+
                   <div class="field-group">
 
+
                     <div class="field-label">
+
                       Email
+
                     </div>
 
+
                     <div class="fake-input">
+
                       you@example.com
+
                     </div>
+
 
                   </div>
 
+
+
                   <div class="field-group">
 
+
                     <div class="field-label">
+
                       Password
+
                     </div>
+
 
                     <div
                       class="
@@ -1733,139 +2498,249 @@
                       "
                     >
 
+
                       <span>
+
                         ••••••••
+
                       </span>
+
 
                       <span class="eye-icon">
+
                         ◉
+
                       </span>
 
+
                     </div>
+
 
                     <div class="field-hint">
+
                       At least 8 characters
+
                     </div>
 
+
                   </div>
+
+
 
                   <div class="terms-row">
 
-                    <div class="fake-checkbox"></div>
+
+                    <div
+                      class="
+                        fake-checkbox
+                      "
+                    ></div>
+
 
                     <div>
+
                       By creating an account,
                       you agree to the
+
                       <strong>
+
                         Terms &amp; Privacy Policy.
+
                       </strong>
+
                     </div>
 
+
                   </div>
 
-                  <div class="create-account-button">
+
+
+                  <div
+                    class="
+                      create-account-button
+                    "
+                  >
+
                     Create account
+
                   </div>
+
+
 
                   <div class="or-divider">
 
+
                     <span></span>
 
+
                     <div>
+
                       or
+
                     </div>
+
 
                     <span></span>
 
+
                   </div>
 
-                  <div class="google-button">
 
-                    <div class="google-g">
+
+                  <div
+                    class="
+                      google-button
+                    "
+                  >
+
+
+                    <div
+                      class="
+                        google-g
+                      "
+                    >
+
                       G
+
                     </div>
+
 
                     <div>
+
                       Continue with Google
+
                     </div>
 
+
                   </div>
+
 
                 </div>
+
+
 
                 <div class="signin-text">
 
                   Already have an account?
 
                   <strong>
+
                     Sign in
+
                   </strong>
 
                 </div>
 
+
               </div>
+
 
             </div>
 
+
           </div>
+
 
         </div>
 
+
       </section>
 
-      <!-- WHAT IS PINOTE -->
+
+
+      <!-- =================================================
+           WHAT IS PINOTE?
+           ================================================= -->
 
       <section
         id="what-is-pinote"
         class="teaser"
       >
 
+
         <div class="teaser-card">
 
-          <div class="teaser-folder-area">
+
+          <div
+            class="
+              teaser-folder-area
+            "
+          >
+
 
             <div class="orbit"></div>
 
-            <div class="big-folder"></div>
+
+            <div
+              class="
+                big-folder
+              "
+            ></div>
+
 
           </div>
+
+
 
           <div class="teaser-copy">
 
+
             <h2>
+
               What is Pinote?
+
             </h2>
 
-            <p>
-              Something personal, playful,
-              and quietly useful is on its way.
-            </p>
 
             <p>
-              For now, we're keeping the
-              details tucked away.
+
+              Something personal,
+              playful, and quietly useful
+              is on its way.
+
             </p>
+
+
+            <p>
+
+              For now, we're keeping
+              the details tucked away.
+
+            </p>
+
 
             <p
               id="coming-soon"
-              class="coming-line"
+              class="
+                coming-line
+              "
             >
+
               Coming soon.
+
             </p>
+
 
           </div>
 
+
         </div>
+
 
       </section>
 
+
     </main>
+
+
 
     <!-- HOME FOOTER -->
 
     <footer>
 
+
       <div class="footer-brand">
+
 
         <div
           class="
@@ -1873,585 +2748,1067 @@
             pinote-wordmark
           "
         >
+
           Pinote
+
         </div>
+
 
         <div>
+
           © 2026 Pinote
+
         </div>
 
+
       </div>
+
+
 
       <div class="footer-links">
 
+
         <a href="#privacy">
+
           Privacy Policy
+
         </a>
+
 
         <a href="#terms">
+
           Terms of Use
+
         </a>
 
+
         <a href="#support">
+
           Support
+
         </a>
+
 
       </div>
 
+
     </footer>
+
 
   </div>
 
-  <!-- =================================================
+
+
+  <!-- =======================================================
        PRIVACY POLICY
-       ================================================= -->
+       ======================================================= -->
 
   <div
     id="privacy-view"
     class="page-view"
   >
 
+
     <main class="info-page">
+
 
       <a
         class="back-link"
-        href="#"
+        href="#home"
       >
+
         ← Back to Pinote
+
       </a>
+
+
 
       <section class="info-card">
 
+
         <h1>
+
           Privacy Policy
+
         </h1>
 
+
         <p class="updated">
+
           Pre-launch draft
+
         </p>
+
+
 
         <div class="draft-notice">
-          This page currently contains placeholder
-          text. Pinote's complete Privacy Policy
-          will replace this draft before public
-          launch and App Store submission.
+
+          This is currently placeholder
+          content. Pinote's finalized
+          Privacy Policy will replace this
+          draft before public launch and
+          App Store submission.
+
         </div>
 
+
+
         <p>
-          Pinote respects the privacy of its users.
-          This Privacy Policy will explain what
-          information Pinote collects, how that
-          information is used, how it is protected,
-          and what choices users have regarding
+
+          Pinote respects the privacy
+          of its users. This Privacy
+          Policy will explain what
+          information Pinote collects,
+          how that information is used,
+          how it is protected, and what
+          choices users have regarding
           their information.
+
         </p>
 
+
+
         <h2>
+
           1. Information We Collect
+
         </h2>
 
+
         <p>
-          The final Privacy Policy will describe
-          the information required to create and
-          maintain a Pinote account, information
-          generated through use of the service,
-          and other information that may be
-          necessary to provide Pinote's features.
+
+          The final Privacy Policy will
+          describe information required
+          to create and maintain a Pinote
+          account, information generated
+          through use of the service,
+          and information necessary to
+          provide Pinote's features.
+
         </p>
 
+
+
         <h2>
+
           2. How We Use Information
+
         </h2>
 
+
         <p>
-          The final policy will explain how
-          information may be used to operate,
-          maintain, secure, moderate, support,
-          and improve Pinote.
+
+          The final policy will explain
+          how information may be used
+          to operate, maintain, secure,
+          moderate, support, and improve
+          Pinote.
+
         </p>
 
+
+
         <h2>
+
           3. Public and Private Content
+
         </h2>
 
+
         <p>
-          The final policy will explain how
-          information and content are handled
-          depending on the privacy settings
-          selected by the user.
+
+          The final policy will explain
+          how content is handled according
+          to the privacy settings selected
+          by users.
+
         </p>
 
+
+
         <h2>
-          4. Safety and Moderation
+
+          4. Reports and Moderation
+
         </h2>
 
+
         <p>
-          Pinote may process reports and related
-          information when necessary to enforce
-          its rules, protect users, and maintain
-          the integrity of the service.
+
+          Pinote may process reports
+          and related information when
+          necessary to enforce its rules,
+          protect users, investigate
+          potential violations, and
+          maintain the integrity of
+          the service.
+
         </p>
 
+
+
         <h2>
+
           5. Data Security
+
         </h2>
 
+
         <p>
-          The final policy will describe the
-          reasonable technical and organizational
-          measures used to protect user
+
+          The final policy will explain
+          the reasonable technical and
+          organizational measures used
+          to help protect user
           information.
+
         </p>
 
+
+
         <h2>
-          6. Your Choices
+
+          6. Your Privacy Choices
+
         </h2>
 
+
         <p>
-          The final policy will explain applicable
-          account settings, privacy choices,
-          access rights, and account deletion
-          options.
+
+          The final Privacy Policy will
+          describe applicable account
+          settings, privacy choices,
+          access rights, and other data
+          rights.
+
         </p>
 
+
+
         <h2>
+
           7. Account Deletion
+
         </h2>
 
+
         <p>
-          Pinote will provide users with a way
-          to initiate deletion of their account
-          and associated information, subject to
-          any limited retention permitted or
-          required for security, legal, fraud
-          prevention, or moderation purposes.
+
+          Pinote will provide users with
+          a way to initiate deletion of
+          their account and associated
+          information, subject to limited
+          retention where permitted or
+          required for security, fraud
+          prevention, legal obligations,
+          dispute resolution, or
+          moderation enforcement.
+
         </p>
 
+
+
         <h2>
+
           8. Children's Privacy
+
         </h2>
 
+
         <p>
-          The final policy will explain Pinote's
-          age requirements and practices relating
-          to younger users.
+
+          The final Privacy Policy will
+          explain Pinote's minimum age
+          requirements and applicable
+          protections relating to
+          younger users.
+
         </p>
 
+
+
         <h2>
+
           9. Changes to This Policy
+
         </h2>
 
+
         <p>
-          This policy may be updated as Pinote
-          develops. The effective date of the
-          final Privacy Policy will be clearly
-          displayed on this page.
+
+          Pinote may update this policy
+          as the service develops.
+          The effective date of the
+          finalized Privacy Policy will
+          appear at the top of this page.
+
         </p>
+
+
 
         <h2>
+
           10. Contact
+
         </h2>
 
+
         <p>
-          Official privacy contact information
+
+          Final privacy contact details
           will be added before launch.
+
         </p>
+
 
       </section>
 
+
     </main>
+
 
   </div>
 
-  <!-- =================================================
-       TERMS
-       ================================================= -->
+
+
+  <!-- =======================================================
+       TERMS OF USE
+       ======================================================= -->
 
   <div
     id="terms-view"
     class="page-view"
   >
 
+
     <main class="info-page">
+
 
       <a
         class="back-link"
-        href="#"
+        href="#home"
       >
+
         ← Back to Pinote
+
       </a>
+
+
 
       <section class="info-card">
 
+
         <h1>
+
           Terms of Use
+
         </h1>
 
+
         <p class="updated">
+
           Pre-launch draft
+
         </p>
+
+
 
         <div class="draft-notice">
-          These Terms currently contain placeholder
-          text. The complete Pinote Terms of Use
-          will replace this draft before public
-          launch and App Store submission.
+
+          These Terms currently contain
+          placeholder content. The complete
+          Pinote Terms of Use will replace
+          this draft before public launch
+          and App Store submission.
+
         </div>
 
+
+
         <p>
-          These Terms of Use will govern access
-          to and use of Pinote and its related
-          services.
+
+          These Terms of Use will govern
+          access to and use of Pinote
+          and its related services.
+
         </p>
 
+
+
         <h2>
+
           1. Eligibility
+
         </h2>
 
+
         <p>
-          The final Terms will explain who may
-          create and use a Pinote account and
-          the minimum age requirements that
-          apply.
+
+          The final Terms will explain
+          who may create and use a Pinote
+          account and the minimum age
+          requirements that apply.
+
         </p>
 
+
+
         <h2>
+
           2. Your Account
+
         </h2>
 
+
         <p>
-          Users will be responsible for maintaining
-          accurate account information and
-          protecting access to their account.
+
+          Users are responsible for
+          maintaining accurate account
+          information and protecting
+          access to their account.
+
         </p>
 
+
+
         <h2>
+
           3. Using Pinote
+
         </h2>
 
+
         <p>
-          The final Terms will describe permitted
-          and prohibited uses of Pinote and the
-          responsibilities that apply when using
-          the service.
+
+          The final Terms will describe
+          permitted and prohibited uses
+          of Pinote and responsibilities
+          that apply when using the
+          service.
+
         </p>
 
+
+
         <h2>
+
           4. User Content
+
         </h2>
 
+
         <p>
-          The final Terms will explain rules
-          relating to content users create,
-          save, publish, copy, share, or otherwise
-          make available through Pinote.
+
+          The final Terms will describe
+          the rules relating to content
+          users create, save, publish,
+          comment on, copy, share, or
+          otherwise make available
+          through Pinote.
+
         </p>
 
+
+
         <h2>
+
           5. Public Content
+
         </h2>
 
+
         <p>
-          Users should understand that content
-          intentionally made public may be viewed
-          by other Pinote users according to
-          Pinote's available features and privacy
-          settings.
+
+          Content intentionally made
+          public may be viewed by other
+          Pinote users according to
+          available features, privacy
+          settings, and applicable
+          moderation rules.
+
         </p>
 
+
+
         <h2>
-          6. Reports and Moderation
+
+          6. Comments and Interactions
+
         </h2>
 
+
         <p>
-          Pinote may review reports involving
-          accounts or content and may take
-          appropriate action when it determines
-          that the Terms, policies, or applicable
+
+          The final Terms will explain
+          rules applicable to comments,
+          interactions with other users,
+          and conduct within public
+          areas of Pinote.
+
+        </p>
+
+
+
+        <h2>
+
+          7. Reports and Moderation
+
+        </h2>
+
+
+        <p>
+
+          Pinote may review reports
+          involving accounts or content
+          and may take appropriate action
+          when it determines that the
+          Terms, policies, or applicable
           rules have been violated.
+
         </p>
 
+
+
         <h2>
-          7. Enforcement
+
+          8. Enforcement
+
         </h2>
 
+
         <p>
+
           Depending on the circumstances,
-          moderation actions may include warnings,
-          restrictions on public visibility,
-          suspension, or banning an account.
+          moderation actions may include
+          warnings, restrictions on public
+          visibility, making content
+          private, suspension, or banning
+          an account.
+
         </p>
 
+
+
         <h2>
-          8. Intellectual Property
+
+          9. Intellectual Property
+
         </h2>
 
+
         <p>
-          The final Terms will explain the rights
-          relating to Pinote's platform, branding,
-          software, and content provided by users.
+
+          The final Terms will explain
+          rights relating to Pinote's
+          platform, branding, software,
+          and content supplied by users.
+
         </p>
 
+
+
         <h2>
-          9. Service Availability
+
+          10. Service Availability
+
         </h2>
 
+
         <p>
-          Pinote may change, improve, suspend,
-          or discontinue features as the service
-          develops.
+
+          Pinote may change, improve,
+          suspend, replace, or discontinue
+          features as the service develops.
+
         </p>
 
+
+
         <h2>
-          10. Changes to These Terms
+
+          11. Changes to These Terms
+
         </h2>
 
+
         <p>
-          The Terms may be updated from time
-          to time. The effective date of the
-          final Terms will be clearly displayed
-          on this page.
+
+          These Terms may be updated
+          from time to time. The effective
+          date of the finalized Terms
+          will be displayed on this page.
+
         </p>
 
+
+
         <h2>
-          11. Contact
+
+          12. Contact
+
         </h2>
 
+
         <p>
-          Official legal contact information
+
+          Official legal contact details
           will be added before launch.
+
         </p>
+
 
       </section>
 
+
     </main>
+
 
   </div>
 
-  <!-- =================================================
+
+
+  <!-- =======================================================
        SUPPORT
-       ================================================= -->
+       ======================================================= -->
 
   <div
     id="support-view"
     class="page-view"
   >
 
+
     <main class="info-page">
+
 
       <a
         class="back-link"
-        href="#"
+        href="#home"
       >
+
         ← Back to Pinote
+
       </a>
+
+
 
       <section class="info-card">
 
+
         <h1>
+
           Pinote Support
+
         </h1>
 
+
+
         <p class="support-intro">
-          Need help with Pinote? This page will
-          contain Pinote's official support and
-          contact channels. The addresses below
-          are planned for launch and will be
-          activated before they are presented
-          as live contact methods.
+
+          Need help with Pinote?
+          This page will contain Pinote's
+          official support and contact
+          channels.
+
         </p>
+
+
+
+        <div class="draft-notice">
+
+          Pinote is currently pre-launch.
+          The addresses shown below are
+          planned contact addresses and
+          will be activated before launch.
+
+        </div>
+
+
 
         <div class="contact-grid">
 
+
           <div class="contact-card">
 
+
             <h3>
+
               General Support
+
             </h3>
 
+
             <div class="planned-email">
+
               support@pinoteapp.com
+
             </div>
 
+
             <p class="contact-status">
-              Planned — to be activated before launch.
+
+              Planned — to be activated
+              before launch.
+
             </p>
+
 
           </div>
 
+
+
           <div class="contact-card">
 
+
             <h3>
+
               Privacy
+
             </h3>
 
+
             <div class="planned-email">
+
               privacy@pinoteapp.com
+
             </div>
 
+
             <p class="contact-status">
-              Planned — to be activated before launch.
+
+              Planned — to be activated
+              before launch.
+
             </p>
+
 
           </div>
 
+
+
           <div class="contact-card">
 
+
             <h3>
+
               Legal & Copyright
+
             </h3>
 
+
             <div class="planned-email">
+
               legal@pinoteapp.com
+
             </div>
 
+
             <p class="contact-status">
-              Planned — to be activated before launch.
+
+              Planned — to be activated
+              before launch.
+
             </p>
 
+
           </div>
+
+
 
           <div class="contact-card">
 
+
             <h3>
+
               Security
+
             </h3>
 
+
             <div class="planned-email">
+
               security@pinoteapp.com
+
             </div>
 
+
             <p class="contact-status">
-              Planned — to be activated before launch.
+
+              Planned — to be activated
+              before launch.
+
             </p>
 
+
           </div>
+
 
         </div>
+
+
 
         <div class="support-note">
-          Before Pinote launches, this page will
-          be updated with active contact details
-          and any additional support information
-          required for users and App Store review.
+
+          Before Pinote launches, this
+          page will be updated with active
+          contact details and any
+          additional information required
+          for users and App Store review.
+
         </div>
 
+
+
         <h2>
+
           Reporting Content
+
         </h2>
 
+
         <p>
-          Pinote includes in-app reporting tools
-          for reporting accounts or individual
-          Pinotes. The final support information
-          will explain where users should go for
-          issues that cannot be handled through
-          the in-app reporting system.
+
+          Pinote includes in-app reporting
+          tools for reporting accounts and
+          individual Pinotes. Additional
+          support options for issues that
+          cannot be handled through the
+          in-app reporting system will
+          appear here before launch.
+
         </p>
+
+
 
         <h2>
+
           Privacy Requests
+
         </h2>
 
+
         <p>
-          Information regarding privacy questions,
-          account data, and other applicable
-          privacy requests will be provided here
-          before launch.
+
+          Information regarding privacy
+          questions, account information,
+          data requests, and applicable
+          privacy rights will be provided
+          here before launch.
+
         </p>
+
+
+
+        <h2>
+
+          Account Help
+
+        </h2>
+
+
+        <p>
+
+          Additional information about
+          account access, account deletion,
+          and other common account issues
+          will be added before launch.
+
+        </p>
+
 
       </section>
 
+
     </main>
+
 
   </div>
 
+
 </div>
+
+
+
+<!-- =========================================================
+     NAVIGATION SCRIPT
+     ========================================================= -->
 
 <script>
 
-  const knownViews = {
-    privacy: "privacy-view",
-    terms: "terms-view",
-    support: "support-view"
+
+  const views = {
+
+    privacy:
+      "privacy-view",
+
+    terms:
+      "terms-view",
+
+    support:
+      "support-view"
+
   };
 
-  function showView() {
+
+
+  function showCurrentView() {
+
 
     const hash =
-      window.location.hash
-        .replace("#", "")
+
+      window
+        .location
+        .hash
+        .replace(
+          "#",
+          ""
+        )
         .toLowerCase();
 
+
+
     document
-      .querySelectorAll(".page-view")
-      .forEach(view => {
-        view.classList.remove("active");
-      });
+      .querySelectorAll(
+        ".page-view"
+      )
+      .forEach(
+        view => {
 
-    if (knownViews[hash]) {
+          view
+            .classList
+            .remove(
+              "active"
+            );
 
-      document
-        .getElementById(knownViews[hash])
-        .classList.add("active");
-
-      window.scrollTo({
-        top: 0,
-        behavior: "instant"
-      });
-
-    } else {
-
-      document
-        .getElementById("home-view")
-        .classList.add("active");
-
-    }
-
-  }
-
-  function scrollHome(id) {
-
-    if (window.location.hash) {
-      history.pushState(
-        "",
-        document.title,
-        window.location.pathname
+        }
       );
+
+
+
+    if (
+      views[hash]
+    ) {
+
+
+      document
+        .getElementById(
+          views[hash]
+        )
+        .classList
+        .add(
+          "active"
+        );
+
+
+      window.scrollTo(
+        {
+          top: 0,
+          behavior: "instant"
+        }
+      );
+
+
+      return;
+
     }
 
-    showView();
 
-    setTimeout(() => {
 
-      const element =
-        document.getElementById(id);
+    document
+      .getElementById(
+        "home-view"
+      )
+      .classList
+      .add(
+        "active"
+      );
 
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth"
-        });
-      }
 
-    }, 30);
+
+    if (
+      hash === "home"
+    ) {
+
+      window.scrollTo(
+        {
+          top: 0,
+          behavior: "instant"
+        }
+      );
+
+    }
 
   }
 
-  function goHomeAndScroll(id) {
-    scrollHome(id);
+
+
+  function goHomeAndScroll(
+    targetId
+  ) {
+
+
+    history.pushState(
+      "",
+      document.title,
+      window.location.pathname
+    );
+
+
+    showCurrentView();
+
+
+
+    setTimeout(
+      () => {
+
+
+        const target =
+
+          document
+            .getElementById(
+              targetId
+            );
+
+
+        if (
+          target
+        ) {
+
+          target
+            .scrollIntoView(
+              {
+                behavior: "smooth",
+                block: "start"
+              }
+            );
+
+        }
+
+
+      },
+      50
+    );
+
   }
 
-  window.addEventListener(
-    "hashchange",
-    showView
-  );
 
-  window.addEventListener(
-    "DOMContentLoaded",
-    showView
-  );
+
+  window
+    .addEventListener(
+      "hashchange",
+      showCurrentView
+    );
+
+
+  window
+    .addEventListener(
+      "DOMContentLoaded",
+      showCurrentView
+    );
+
 
 </script>
 
+
 </body>
+
 </html>
